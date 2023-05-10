@@ -29,8 +29,9 @@ public class ContadorController : ControllerBase
         {
             _CONTADOR.Incrementar();
             valorAtualContador = _CONTADOR.ValorAtual;
-
         }
+
+        _telemetry.TrackTrace($"Valor do contador: {valorAtualContador}");
 
         return new()
         {
